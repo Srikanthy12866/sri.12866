@@ -5,8 +5,10 @@ import Typewriter from "typewriter-effect";
 import { introdata, meta } from "../../content_option";
 import { Link } from "react-router-dom";
 import blackAndWhiteImage from "../../assets/images/black-and-white-image.png";
+import { useTranslation } from 'react-i18next';
 
 export const Home = () => {
+  const { t } = useTranslation();
   return (
     <HelmetProvider>
       <section id="home" className="home">
@@ -42,7 +44,7 @@ export const Home = () => {
                 <div className="intro_btn-action pb-5">
                   <Link to="/portfolio" className="text_2">
                     <div id="button_p" className="ac_btn btn ">
-                      My Portfolio
+                      {t('my_portfolio')}
                       <div className="ring one"></div>
                       <div className="ring two"></div>
                       <div className="ring three"></div>
@@ -50,7 +52,7 @@ export const Home = () => {
                   </Link>
                   <Link to="/contact">
                     <div id="button_h" className="ac_btn btn">
-                      Contact Me
+                      {t('contact_me')}
                       <div className="ring one"></div>
                       <div className="ring two"></div>
                       <div className="ring three"></div>

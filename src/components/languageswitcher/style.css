@@ -1,0 +1,24 @@
+.language-switcher {
+  margin-left: 1rem;
+}
+
+.language-select {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  min-width: 120px;
+}
+
+.language-select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.language-select option {
+  background: #333;
+  color: white;
+}

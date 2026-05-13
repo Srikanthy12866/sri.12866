@@ -5,8 +5,10 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { contactConfig } from "../../content_option";
+import { useTranslation } from 'react-i18next';
 
 export const ContactUs = () => {
+  const { t } = useTranslation();
   const [formData, setFormdata] = useState({
     email: "",
     name: "",
@@ -40,7 +42,7 @@ export const ContactUs = () => {
           console.log(result.text);
           setFormdata({
             loading: false,
-            alertmessage: "SUCCESS! Thank you for your message",
+            alertmessage: t('success_message'),
             variant: "success",
             show: true,
           });
@@ -49,7 +51,7 @@ export const ContactUs = () => {
           console.log(error.text);
           setFormdata({
             loading: false,
-            alertmessage: `Failed to send! ${error.text}`,
+            alertmessage: t('failed_message', { error: error.text }),
             variant: "danger",
             show: true,
           });
@@ -75,7 +77,7 @@ export const ContactUs = () => {
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
-            <h1 className="display-4 mb-4">Contact Me</h1>
+            <h1 className="display-4 mb-4">{t('contact_me')}</h1>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
@@ -94,7 +96,7 @@ export const ContactUs = () => {
             </Alert>
           </Col>
           <Col lg="5" className="mb-5">
-            <h3 className="color_sec py-4">Get in touch</h3>
+            <h3 className="color_sec py-4">{t('get_in_touch')}</h3>
             <address>
               <strong>Email:</strong>{" "}
               <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
@@ -120,7 +122,7 @@ export const ContactUs = () => {
                     className="form-control"
                     id="name"
                     name="name"
-                    placeholder="Name"
+                    placeholder={t('name')}
                     value={formData.name || ""}
                     type="text"
                     required
@@ -132,7 +134,7 @@ export const ContactUs = () => {
                     className="form-control rounded-0"
                     id="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder={t('email')}
                     type="email"
                     value={formData.email || ""}
                     required
@@ -144,7 +146,7 @@ export const ContactUs = () => {
                 className="form-control rounded-0"
                 id="message"
                 name="message"
-                placeholder="Message"
+                placeholder={t('message')}
                 rows="5"
                 value={formData.message}
                 onChange={handleChange}
@@ -154,7 +156,7 @@ export const ContactUs = () => {
               <Row>
                 <Col lg="12" className="form-group">
                   <button className="btn ac_btn" type="submit">
-                    {formData.loading ? "Sending..." : "Send"}
+                    {formData.loading ? t('sending') : t('send')}
                   </button>
                 </Col>
               </Row>
