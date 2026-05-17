@@ -16,7 +16,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="language-switcher">
+    <div className="language-switcher nav_ac">
       <select
         value={i18n.language}
         onChange={(e) => changeLanguage(e.target.value)}
