@@ -148,7 +148,7 @@ const contactConfig = {
 const socialprofils = {
     github: "https://github.com/Srikanthy12866?tab=repositories",
     facebook: "https://www.facebook.com/srikanth12866/?locale=en_GB",
-    linkedin: "https://in.linkedin.com/in/sri12866",
+    linkedin: "https://www.linkedin.com/in/sri12866/",
     instagram: "https://www.instagram.com/sri.12866/"
 };
 export {
