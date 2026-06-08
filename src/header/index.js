@@ -8,7 +8,7 @@ import LanguageSwitcher from "../components/languageswitcher";
 import { useTranslation } from 'react-i18next';
 
 const Headermain = () => {
-  const [isActive, setActive] = useState("false");
+  const [isActive, setActive] = useState(true);
   const { t } = useTranslation();
 
   const handleToggle = () => {
@@ -49,6 +49,11 @@ const Headermain = () => {
                   </li>
                   <li className="menu_item">
                   <Link onClick={handleToggle} to="/contact" className="my-3">{t('contact')}</Link>
+                  </li>
+                  <li className="menu_item">
+                    <a onClick={handleToggle} href="/resume.pdf" className="my-3" download>
+                      {t('resume')}
+                    </a>
                   </li>
                 </ul>
               </div>
