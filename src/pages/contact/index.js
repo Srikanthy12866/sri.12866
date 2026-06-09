@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as emailjs from "emailjs-com";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -21,7 +21,7 @@ export const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormdata({ loading: true });
+    setFormdata((prev) => ({ ...prev, loading: true }));
 
     const templateParams = {
       from_name: formData.email,
@@ -40,21 +40,26 @@ export const ContactUs = () => {
       .then(
         (result) => {
           console.log(result.text);
-          setFormdata({
+          setFormdata((prev) => ({
+            ...prev,
             loading: false,
             alertmessage: t('success_message'),
             variant: "success",
             show: true,
-          });
+            name: "",
+            email: "",
+            message: "",
+          }));
         },
         (error) => {
           console.log(error.text);
-          setFormdata({
+          setFormdata((prev) => ({
+            ...prev,
             loading: false,
             alertmessage: t('failed_message', { error: error.text }),
             variant: "danger",
             show: true,
-          });
+          }));
           document.getElementsByClassName("co_alert")[0].scrollIntoView();
         }
       );
@@ -66,6 +71,14 @@ export const ContactUs = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  useEffect(() => {
+    if (!formData.show) return;
+    const id = setTimeout(() => {
+      setFormdata((prev) => ({ ...prev, show: false }));
+    }, 5000);
+    return () => clearTimeout(id);
+  }, [formData.show]);
 
   return (
     <HelmetProvider>
@@ -89,7 +102,7 @@ export const ContactUs = () => {
               className={`rounded-0 co_alert ${
                 formData.show ? "d-block" : "d-none"
               }`}
-              onClose={() => setFormdata({ show: false })}
+              onClose={() => setFormdata((prev) => ({ ...prev, show: false }))}
               dismissible
             >
               <p className="my-0">{formData.alertmessage}</p>

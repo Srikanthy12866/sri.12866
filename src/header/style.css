@@ -86,13 +86,20 @@
 }
 
 .site__navigation {
-    height: 100%;
+    height: 100vh;
     left: 0;
     overflow: hidden;
     position: fixed;
     top: 0;
     width: 100%;
     visibility: hidden;
+}
+
+/* prevent horizontal scrolling from menu overlay */
+.site__navigation,
+.bg__menu,
+.menu__wrapper {
+    overflow-x: hidden;
 }
 
 .menu__opend {
@@ -137,10 +144,10 @@
     left: 0px;
     top: 0px;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: var(--primary-color);
     will-change: transform;
-    transform: translateY(-100%);
+    transform: translateY(-100vh);
     transition: .5s ease all;
 }
 
@@ -151,34 +158,39 @@
 .menu__wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
-    overflow: hidden auto;
+    height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .the_menu {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: 10vh;
+    padding-bottom: 8vh;
     padding-left: 0;
+    max-height: 100vh;
+    box-sizing: border-box;
 }
 
 @media (min-width: 992px) {
     .menu__container {
-        margin-left: 33.3333%;
+        margin-left: 0%;
     }
-    .the_menu {
-        padding-top: 10vh;
-        padding-bottom: 10vh;
-    }
+    /* .the_menu {
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    } */
 }
 
 .the_menu .menu_item>a {
     color: var(--text-color-2);
     line-height: 1;
     font-size: 2rem;
-    display: inline-block;
+    display: block;
+    width: 100%;
+    text-align: center;
     position: relative;
     transition: color 250ms cubic-bezier(0, 0, 0.58, 1) 0s;
-    padding: 4px 0px;
+    padding: 6px 0px;
     text-decoration: none;
     font-family: Marcellus;
 }
@@ -190,6 +202,18 @@
 @media (min-width: 768px) {
     .the_menu .menu_item>a {
         font-size: 4.8vw;
+    }
+}
+
+/* smaller font on small screens so items fit without page scroll */
+@media (max-width: 575px) {
+    .the_menu {
+        padding-top: 8vh;
+        padding-bottom: 6vh;
+    }
+    .the_menu .menu_item>a {
+        font-size: 1.25rem;
+        padding: 8px 0;
     }
 }
 
