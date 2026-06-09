@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/sri.12866/static/css/main.cc059312.css",
-    "main.js": "/sri.12866/static/js/main.de7d7af5.js",
+    "main.js": "/sri.12866/static/js/main.e58a2921.js",
     "static/media/black-and-white-image.png": "/sri.12866/static/media/black-and-white-image.840e3976da80ac5efcc7.png",
     "index.html": "/sri.12866/index.html"
   },
   "entrypoints": [
     "static/css/main.cc059312.css",
-    "static/js/main.de7d7af5.js"
+    "static/js/main.e58a2921.js"
   ]
 }
