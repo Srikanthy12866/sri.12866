@@ -36,26 +36,33 @@ const worktimeline = [{
     },
 ];
 
-const skills = [{
-        name: "Python",
-        value: 90,
-    },
-    {
-        name: "Django",
-        value: 85,
-    },
+const skills = [
     {
         name: "Javascript",
-        value: 80,
+        value: 85,
     },
     {
         name: "React",
-        value: 60,
+        value: 90,
+    },{
+        name: "Python",
+        value: 80,
     },
     {
-        name: "Jquery",
-        value: 85,
+        name: "Django",
+        value: 70,
     },
+    
+    {
+        name: "Spring Boot",
+        value: 70,
+    },{
+        name: "MySQL",
+        value: 70,
+    },{
+        name: "MongoDB",
+        value: 70,
+    }
 ];
 
 const services = [{
