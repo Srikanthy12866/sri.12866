@@ -158,6 +158,8 @@ const socialprofils = {
     linkedin: "https://www.linkedin.com/in/sri12866/",
     instagram: "https://www.instagram.com/sri.12866/"
 };
+// Resume URL from environment variable
+const resume = process.env.REACT_APP_RESUME_URL || "/resume.pdf";
 export {
     meta,
     dataabout,
@@ -169,4 +171,5 @@ export {
     contactConfig,
     socialprofils,
     logotext,
+    resume,
 };

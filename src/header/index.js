@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import { VscGrabber, VscClose } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import { logotext ,socialprofils } from "../content_option";
+import { logotext ,socialprofils, resume } from "../content_option";
 import Themetoggle from "../components/themetoggle";
 import LanguageSwitcher from "../components/languageswitcher";
 import { useTranslation } from 'react-i18next';
@@ -14,6 +14,29 @@ const Headermain = () => {
   const handleToggle = () => {
     setActive(!isActive);
     document.body.classList.toggle("ovhidden");
+  };
+
+  const handleDownloadResume = async (e) => {
+    e.preventDefault();
+    handleToggle();
+    const url = resume;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Network response was not ok');
+      const blob = await response.blob();
+      const filename = url.split('/').pop() || 'resume.pdf';
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.setAttribute('download', filename);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (err) {
+      // Fallback: open the URL in a new tab if fetch/download fails (CORS or other issues)
+      window.open(url, '_blank');
+    }
   };
 
   return (
@@ -51,8 +74,8 @@ const Headermain = () => {
                   <Link onClick={handleToggle} to="/contact" className="my-3">{t('contact')}</Link>
                   </li>
                   <li className="menu_item">
-                    <a onClick={handleToggle} href="/resume.pdf" className="my-3" download>
-                      {t('resume')}
+                    <a onClick={handleDownloadResume} href={resume} className="my-3">
+                      {t('Resume')}
                     </a>
                   </li>
                 </ul>
