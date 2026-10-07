@@ -143,7 +143,7 @@ const dataportfolio = [{
 ];
 
 const contactConfig = {
-    YOUR_EMAIL: "sonicc12866@gmail.com",
+    YOUR_EMAIL: "srikanthy12866@gmail.com",
     description: "Feel free to reach out for collaborations, projects, or just to say hello! I'm always excited to discuss new opportunities and ideas.",
     // creat an emailjs.com account 
     // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
