@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { supabase } from '../supabaseClient';
 
 // Returns a signed URL for a file in Supabase Storage
@@ -11,8 +10,13 @@ export async function getResumeSignedUrl({ bucket = 'resumes', path = 'resume.pd
 // Fetches the resume as a Blob (useful for downloading or creating an object URL)
 export async function fetchResumeBlob(opts = {}) {
   const url = await getResumeSignedUrl(opts);
-  const res = await axios.get(url, { responseType: 'blob' });
-  return res.data;
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch resume: ${response.status} ${response.statusText}`);
+  }
+
+  return response.blob();
 }
 
 // Optional helper: get a public URL if the file is public

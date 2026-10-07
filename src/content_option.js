@@ -158,8 +158,8 @@ const socialprofils = {
     linkedin: "https://www.linkedin.com/in/sri12866/",
     instagram: "https://www.instagram.com/sri.12866/"
 };
-// Resume URL from environment variable
-const resume = process.env.REACT_APP_RESUME_URL || "/resume.pdf";
+// Resume URL from environment variable (Google Drive file ID)
+const resume = import.meta.env.VITE_RESUME_URL || "";
 export {
     meta,
     dataabout,

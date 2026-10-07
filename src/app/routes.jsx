@@ -1,24 +1,16 @@
 import React from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
-import withRouter from "../hooks/withRouter"
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Home } from "../pages/home";
 import { Portfolio } from "../pages/portfolio";
 import { ContactUs } from "../pages/contact";
 import { About } from "../pages/about";
 import { Socialicons } from "../components/socialicons";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-const AnimatedRoutes = withRouter(({ location }) => (
-  <TransitionGroup>
-    <CSSTransition
-      key={location.key}
-      timeout={{
-        enter: 400,
-        exit: 400,
-      }}
-      classNames="page"
-      unmountOnExit
-    >
+function AppRoutes() {
+  const location = useLocation();
+
+  return (
+    <div className="s_c">
       <Routes location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -26,14 +18,6 @@ const AnimatedRoutes = withRouter(({ location }) => (
         <Route path="/contact" element={<ContactUs />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </CSSTransition>
-  </TransitionGroup>
-));
-
-function AppRoutes() {
-  return (
-    <div className="s_c">
-      <AnimatedRoutes />
       <Socialicons />
     </div>
   );

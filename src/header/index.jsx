@@ -19,12 +19,16 @@ const Headermain = () => {
   const handleDownloadResume = async (e) => {
     e.preventDefault();
     handleToggle();
-    const url = resume;
+    
+    // Construct Google Drive direct download URL
+    const fileId = resume;
+    const googleDriveDownloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+    
     try {
-      const response = await fetch(url);
+      const response = await fetch(googleDriveDownloadUrl);
       if (!response.ok) throw new Error('Network response was not ok');
       const blob = await response.blob();
-      const filename = url.split('/').pop() || 'resume.pdf';
+      const filename = 'Resume.pdf';
       const blobUrl = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = blobUrl;
@@ -34,8 +38,9 @@ const Headermain = () => {
       link.remove();
       window.URL.revokeObjectURL(blobUrl);
     } catch (err) {
-      // Fallback: open the URL in a new tab if fetch/download fails (CORS or other issues)
-      window.open(url, '_blank');
+      console.error('Download error:', err);
+      // Fallback: open the Google Drive file in a new tab
+      window.open(`https://drive.google.com/file/d/${fileId}/view`, '_blank');
     }
   };
 
