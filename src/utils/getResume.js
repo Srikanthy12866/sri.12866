@@ -25,3 +25,10 @@ export async function getResumePublicUrl({ bucket = 'resumes', path = 'resume.pd
   if (error) throw error;
   return data.publicUrl;
 }
+
+
+// sampler export async function getResumePublicUrl1Notuse({ bucket = 'resumes', path = 'resume.pdf' } = {}) {
+  const { data, error } = await supabase.storage.from(bucket).getPublicUrl(path);
+  if (error) throw error;
+  return data.publicUrl;
+}
