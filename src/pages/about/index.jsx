@@ -8,11 +8,14 @@ import {
   worktimeline,
   skills,
   services,
+  skillGroups,
 } from "../../content_option";
+import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
 export const About = () => {
   const { t } = useTranslation();
+  const [showMore, setShowMore] = useState(false);
   return (
     <HelmetProvider>
       <Container className="About-header">
@@ -76,23 +79,41 @@ export const About = () => {
             <h3 className="color_sec py-4">Skills</h3>
           </Col>
           <Col lg="7">
-            {skills.map((data, i) => {
-              return (
-                <div key={i}>
-                  <h3 className="progress-title">{data.name}</h3>
-                  <div className="progress">
-                    <div
-                      className="progress-bar"
-                      style={{
-                        width: `${data.value}%`,
-                      }}
-                    >
-                      <div className="progress-value">{data.value}%</div>
-                    </div>
-                  </div>
+            <div className="core-skills">
+              {skillGroups.Core.map((s, i) => (
+                <span key={i} className="skill-badge">
+                  {s}
+                </span>
+              ))}
+            </div>
+
+            <div className="more-skills">
+              <button
+                className="more-toggle btn btn-link p-0"
+                onClick={() => setShowMore((v) => !v)}
+              >
+                {showMore ? "Hide other skills" : "Show other skills"}
+              </button>
+
+              {showMore && (
+                <div className="skill-groups">
+                  {Object.entries(skillGroups)
+                    .filter(([k]) => k !== "Core")
+                    .map(([group, items]) => (
+                      <div key={group} className="skill-group">
+                        <h6 className="skill-group-title">{group}</h6>
+                        <div className="skill-group-items">
+                          {items.map((it, idx) => (
+                            <span key={idx} className="skill-chip">
+                              {it}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
                 </div>
-              );
-            })}
+              )}
+            </div>
           </Col>
         </Row>
         <Row className="sec_sp">

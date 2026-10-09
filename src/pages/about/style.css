@@ -66,6 +66,49 @@
     border-bottom: solid 2px var(--secondary-color);
 }
 
+.core-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.skill-badge {
+    background: var(--secondary);
+    color: var(--text-color);
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.more-skills {
+    margin-top: 8px;
+}
+
+.skill-group {
+    margin-top: 12px;
+}
+
+.skill-group-title {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.skill-group-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skill-chip {
+    background: rgba(255,255,255,0.03);
+    color: var(--text-color);
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
 .service-section .service-category-title {
     padding-bottom: 4px;
 }

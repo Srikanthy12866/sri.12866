@@ -3,7 +3,7 @@
     "version": "0.1.2",
     "private": true,
     "type": "module",
-    "homepage": "https://srikanthy12866.github.io/sri.12866",
+    "homepage": "https://srikanthy12866.github.io/",
     "dependencies": {
         "@supabase/supabase-js": "^2.117.2",
         "bootstrap": "^5.3.8",
