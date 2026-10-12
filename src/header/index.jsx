@@ -67,13 +67,16 @@ const Headermain = () => {
               <div className="menu__container p-3">
                 <ul className="the_menu">
                   <li className="menu_item ">
-                  <Link  onClick={handleToggle} to="/" className="my-3">{t('home')}</Link>
+                    <Link onClick={handleToggle} to="/" className="my-3">{t('home')}</Link>
                   </li>
                   <li className="menu_item">
-                  <Link onClick={handleToggle} to="/about" className="my-3">{t('about')}</Link>
+                    <Link onClick={handleToggle} to="/products" className="my-3">{t('products')}</Link>
                   </li>
                   <li className="menu_item">
-                  <Link onClick={handleToggle} to="/contact" className="my-3">{t('contact')}</Link>
+                    <Link onClick={handleToggle} to="/about" className="my-3">{t('about')}</Link>
+                  </li>
+                  <li className="menu_item">
+                    <Link onClick={handleToggle} to="/contact" className="my-3">{t('contact')}</Link>
                   </li>
                   <li className="menu_item">
                     <a onClick={handleDownloadResume} href={resume} className="my-3">

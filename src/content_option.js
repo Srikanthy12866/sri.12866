@@ -108,68 +108,52 @@ const services = [
     },
 ];
 
-const dataportfolio = [{
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
+const products = [
     {
-        img: "https://picsum.photos/400/800/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-
-    {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/550/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
+        id: "deep-hardware-seeker",
+        title: "Go Seeker",
+        tagline: "Deep Hardware Diagnostic & Real-Time Host Telemetry Suite for Ubuntu / Linux",
+        category: "Ubuntu & System Diagnostics",
+        badge: "Ubuntu / Linux Native",
+        status: "Open Source / Production",
+        img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+        description: "An advanced desktop hardware diagnostic and real-time host inspection tool engineered specifically for Ubuntu and Linux. Directly reads true hardware telemetry from the local host by querying Linux kernel sysfs (/sys), native OS drivers, firmware interfaces, and system APIs—delivering accurate per-core CPU clock speeds, memory module layouts, GPU controllers, baseboard, and BIOS specifications with zero browser-level approximations.",
+        architecture: "Sandboxed Electron IPC bridge architecture (nodeIntegration: false, contextIsolation: true) exposing a secure read-only window.deviceHardware.getSnapshot() contract. Gathers authentic host metrics via systeminformation and kernel sysfs on Linux, paired with a React interface running a 1-second real-time telemetry polling loop.",
+        techStack: [
+            "Ubuntu",
+            "Linux",
+            "Electron",
+            "React.js",
+            "systeminformation",
+            "Node.js",
+            "Kernel sysfs",
+            "IPC Architecture",
+        ],
+        features: [
+            "Deep hardware inspection via Linux kernel sysfs (/sys) & native OS interfaces",
+            "Real-time 1-second telemetry polling for per-core CPU clock speeds and memory usage",
+            "Granular memory module layout, RAM timings, and DIMM slot topology",
+            "Motherboard, BIOS version, GPU graphics controllers, and OS build telemetry",
+            "Packaged for Ubuntu (DEB & AppImage) and Linux ARM64 (Raspberry Pi)",
+            "Strict zero-guesswork design: reports authentic host metrics without fabricated fallbacks",
+            "Exportable hardware snapshot reports for system benchmarking & audit compliance",
+        ],
+        link: "https://github.com/Srikanthy12866/DEEP_HARDWARE_SEEKER",
+        github: "https://github.com/Srikanthy12866/DEEP_HARDWARE_SEEKER",
+        stats: {
+            targetOS: "Ubuntu (DEB / AppImage)",
+            telemetry: "1s Real-Time Polling",
+            architecture: "Sandboxed Electron IPC",
+            accuracy: "Kernel Native (/sys)",
+        },
     },
 ];
+
+const dataportfolio = products.map((p) => ({
+    img: p.img,
+    description: p.title + " - " + p.tagline,
+    link: p.link,
+}));
 
 const contactConfig = {
     YOUR_EMAIL: "srikanthy12866@gmail.com",
@@ -193,6 +177,7 @@ export {
     meta,
     dataabout,
     dataportfolio,
+    products,
     worktimeline,
     skills,
     services,

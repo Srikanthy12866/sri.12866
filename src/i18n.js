@@ -7,13 +7,16 @@ const resources = {
     translation: {
       // Navigation
       "home": "Home",
-      "portfolio": "Portfolio",
+      "portfolio": "Products",
+      "products": "Products",
       "about": "About",
       "contact": "Contact",
+      "Resume": "Resume",
 
       // Home Page
       "about_me": "About me",
-      "my_portfolio": "My Portfolio",
+      "my_portfolio": "My Products",
+      "my_products": "Products",
       "contact_me": "Contact Me",
       "i_love_coding": "I love coding",
       "i_code_cool_websites": "I code cool websites",
@@ -22,7 +25,7 @@ const resources = {
       // About Page
       "about_me_title": "About me",
       "a_bit_about_myself": "a bit about myself",
-      "about_description": "I am a dedicated full-stack developer based in Bengaluru, specializing in modern web technologies and mobile app development. With a passion for clean code and user-centric design, I strive to build efficient and scalable solutions that make a difference.",
+      "about_description": "Software Engineer with experience in Warehouse Management Systems (WMS), Inventory & Order Management. Skilled in building microservices and RESTful APIs with Java and Spring Boot, and responsive frontends using React.js and Redux. Experienced in database design with MySQL and applying best practices across the SDLC.",
       "spoken_languages": "Spoken Languages",
       "work_timeline": "Work Timeline",
 
@@ -36,9 +39,20 @@ const resources = {
       "email": "Email",
       "message": "Message",
 
-      // Portfolio
-      "portfolio_title": "Portfolio",
-      "view_project": "view project",
+      // Products / Portfolio
+      "portfolio_title": "Products & Systems",
+      "products_title": "Products & Systems",
+      "products_subtitle": "Deep hardware diagnostic & real-time telemetry tools engineered for Ubuntu and Linux.",
+      "view_project": "Quick View",
+      "quick_view": "Quick View",
+      "view_code": "GitHub",
+      "architecture_overview": "Architecture & Engineering",
+      "key_capabilities": "Key Capabilities",
+      "tech_stack": "Technologies",
+      "all_categories": "All Categories",
+      "search_products": "Search products or tech stack...",
+      "no_products_found": "No matching products found",
+      "reset_filters": "Reset Filters",
 
       // Footer
       "copyright": "copyright",
@@ -52,13 +66,16 @@ const resources = {
     translation: {
       // Navigation
       "home": "హోమ్",
-      "portfolio": "పోర్ట్ఫోలియో",
+      "portfolio": "ఉత్పత్తులు",
+      "products": "ఉత్పత్తులు",
       "about": "గురించి",
       "contact": "సంప్రదించండి",
+      "Resume": "రెజ్యూమ్",
 
       // Home Page
       "about_me": "నా గురించి",
-      "my_portfolio": "నా పోర్ట్ఫోలియో",
+      "my_portfolio": "నా ఉత్పత్తులు",
+      "my_products": "ఉత్పత్తులు",
       "contact_me": "నన్ను సంప్రదించండి",
       "i_love_coding": "నాకు కోడింగ్ ఇష్టం",
       "i_code_cool_websites": "నేను బాగా వెబ్‌సైట్‌లు కోడ్ చేస్తాను",
@@ -67,7 +84,7 @@ const resources = {
       // About Page
       "about_me_title": "నా గురించి",
       "a_bit_about_myself": "నా గురించి కొంచెం",
-      "about_description": "నేను బెంగళూరులో ఉన్న డెడికేటెడ్ ఫుల్-స్టాక్ డెవలపర్, ఆధునిక వెబ్ టెక్నాలజీలలో ప్రత్యేకత కలిగి ఉన్నాను మరియు మొబైల్ యాప్ డెవలప్‌మెంట్. క్లీన్ కోడ్ మరియు యూజర్-సెంట్రిక్ డిజైన్‌కు ప్యాషన్ ఉన్న నేను, ప్రభావం చేసే సమర్థవంతమైన మరియు స్కేలబుల్ సొల్యూషన్‌లను నిర్మించడానికి ప్రయత్నిస్తాను.",
+      "about_description": "నేను బెంగళూరులో ఉన్న డెడికేటెడ్ ఫుల్-స్టాక్ డెవలపర్, వేర్‌హౌస్ మేనేజ్‌మెంట్ సిస్టమ్స్ (WMS), ఇన్వెంటరీ మరియు ఆర్డర్ మేనేజ్‌మెంట్‌లో అనుభవం కలిగి ఉన్నాను. జావా, స్ప్రింగ్ బూట్ మైక్రోసర్వీసెస్ మరియు రియాక్ట్ ఆధారిత ఫ్రంటెండ్‌లలో ప్రత్యేకత.",
       "spoken_languages": "మాట్లాడే భాషలు",
       "work_timeline": "పని టైమ్‌లైన్",
 
@@ -81,9 +98,20 @@ const resources = {
       "email": "ఇమెయిల్",
       "message": "సందేశం",
 
-      // Portfolio
-      "portfolio_title": "పోర్ట్ఫోలియో",
-      "view_project": "ప్రాజెక్ట్ చూడండి",
+      // Products / Portfolio
+      "portfolio_title": "ఉత్పత్తులు & వ్యవస్థలు",
+      "products_title": "ఉత్పత్తులు & వ్యవస్థలు",
+      "products_subtitle": "ఉబుంటు మరియు లైనక్స్ కోసం రూపొందించబడిన డీప్ హార్డ్‌వేర్ డయాగ్నోస్టిక్స్ మరియు రియల్-టైమ్ టెలిమెట్రీ సాధనాలు.",
+      "view_project": "త్వరిత వీక్షణ",
+      "quick_view": "త్వరిత వీక్షణ",
+      "view_code": "గిట్‌హబ్",
+      "architecture_overview": "ఆర్కిటెక్చర్ & ఇంజనీరింగ్",
+      "key_capabilities": "కీలక సామర్థ్యాలు",
+      "tech_stack": "టెక్నాలజీలు",
+      "all_categories": "అన్ని విభాగాలు",
+      "search_products": "ఉత్పత్తులు లేదా టెక్నాలజీ వెతకండి...",
+      "no_products_found": "సరిపోలే ఉత్పత్తులు కనుగొనబడలేదు",
+      "reset_filters": "ఫిల్టర్‌లను రీసెట్ చేయండి",
 
       // Footer
       "copyright": "కాపీరైట్",
@@ -97,13 +125,16 @@ const resources = {
     translation: {
       // Navigation
       "home": "होम",
-      "portfolio": "पोर्टफोलियो",
+      "portfolio": "उत्पाद",
+      "products": "उत्पाद",
       "about": "हमारे बारे में",
       "contact": "संपर्क",
+      "Resume": "बायोडाटा",
 
       // Home Page
       "about_me": "हमारे बारे में",
-      "my_portfolio": "मेरा पोर्टफोलियो",
+      "my_portfolio": "मेरे उत्पाद",
+      "my_products": "उत्पाद",
       "contact_me": "मुझसे संपर्क करें",
       "i_love_coding": "मुझे कोडिंग पसंद है",
       "i_code_cool_websites": "मैं बढ़िया वेबसाइट कोड करता हूं",
@@ -112,7 +143,7 @@ const resources = {
       // About Page
       "about_me_title": "हमारे बारे में",
       "a_bit_about_myself": "हमारे बारे में थोड़ा",
-      "about_description": "मैं बेंगलुरु में स्थित एक समर्पित फुल-स्टैक डेवलपर हूं, जो आधुनिक वेब तकनीकों में विशेषज्ञ हूं और मोबाइल ऐप डेवलपमेंट में माहिर हूं। क्लीन कोड और यूजर-केंद्रित डिजाइन के जुनून के साथ, मैं प्रभावशाली, कुशल और स्केलेबल समाधान बनाने का प्रयास करता हूं।",
+      "about_description": "वेयरहाउस मैनेजमेंट सिस्टम (WMS), इन्वेंट्री और ऑर्डर मैनेजमेंट में अनुभवी सॉफ्टवेयर इंजीनियर। जावा और स्प्रिंग बूट के साथ माइक्रोसर्विसेज और रिएक्ट.जेएस के साथ फ्रंटएंड विकसित करने में माहिर।",
       "spoken_languages": "बोली जाने वाली भाषाएं",
       "work_timeline": "कार्य समयरेखा",
 
@@ -126,9 +157,20 @@ const resources = {
       "email": "ईमेल",
       "message": "संदेश",
 
-      // Portfolio
-      "portfolio_title": "पोर्टफोलियो",
-      "view_project": "प्रोजेक्ट देखें",
+      // Products / Portfolio
+      "portfolio_title": "उत्पाद और प्रणालियाँ",
+      "products_title": "उत्पाद और प्रणालियाँ",
+      "products_subtitle": "उबंटू और लिनक्स के लिए निर्मित डीप हार्डवेयर डायग्नोस्टिक्स और रियल-टाइम टेलीमेट्री टूल्स।",
+      "view_project": "त्वरित विवरण",
+      "quick_view": "त्वरित विवरण",
+      "view_code": "गिटहब",
+      "architecture_overview": "आर्किटेक्चर और इंजीनियरिंग",
+      "key_capabilities": "प्रमुख विशेषताएं",
+      "tech_stack": "तकनीकी स्टैक",
+      "all_categories": "सभी श्रेणियां",
+      "search_products": "उत्पाद या तकनीक खोजें...",
+      "no_products_found": "कोई मेल खाने वाला उत्पाद नहीं मिला",
+      "reset_filters": "फ़िल्टर रीसेट करें",
 
       // Footer
       "copyright": "कॉपीराइट",

@@ -1,0 +1,638 @@
+/* Ubuntu Download Center - Rich Modern Aesthetic */
+
+.ubuntu-download-center {
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-family: inherit;
+  color: var(--text-color);
+  animation: fadeInCenter 0.35s ease-out;
+}
+
+@keyframes fadeInCenter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toast Download Notification */
+.download-toast-banner {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999999;
+  background: #111827;
+  color: #f9fafb;
+  border: 1px solid #10b981;
+  border-left: 5px solid #10b981;
+  border-radius: 10px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  animation: toastSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 420px;
+}
+
+@keyframes toastSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.toast-icon {
+  font-size: 1.6rem;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.toast-text strong {
+  font-size: 0.95rem;
+  display: block;
+}
+
+/* Header Card */
+.ubuntu-header-card {
+  background: linear-gradient(
+    135deg,
+    rgba(233, 84, 32, 0.09) 0%,
+    rgba(119, 33, 111, 0.08) 50%,
+    rgba(128, 128, 128, 0.05) 100%
+  );
+  border: 1px solid rgba(233, 84, 32, 0.3);
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.ubuntu-header-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e95420, #77216f, #e95420);
+}
+
+.ubuntu-circle-logo {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #e95420, #77216f);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.9rem;
+  box-shadow: 0 4px 16px rgba(233, 84, 32, 0.4);
+  flex-shrink: 0;
+}
+
+.ubuntu-brand-icon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.ubuntu-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text-color);
+}
+
+.ubuntu-distro-pill {
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: rgba(233, 84, 32, 0.18);
+  color: #e95420;
+  border: 1px solid rgba(233, 84, 32, 0.35);
+  padding: 2px 10px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.detected-os-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.detected-os-pill.verified {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.detected-os-pill.non-linux {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.pulse-indicator {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseGreen 1.8s infinite;
+}
+
+@keyframes pulseGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.ubuntu-toggle-view-btn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+/* OS Advisory Notice */
+.os-notice-callout {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-left: 4px solid #f59e0b;
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+}
+
+/* GitHub Live Strip */
+.github-live-strip {
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+}
+
+.live-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.repo-link-badge {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.repo-link-badge:hover {
+  opacity: 1;
+  color: #e95420;
+}
+
+.commit-badge {
+  color: var(--text-color);
+  opacity: 0.85;
+}
+
+.commit-badge code {
+  color: #e95420;
+  font-size: 0.8rem;
+  background: rgba(233, 84, 32, 0.12);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.version-pill {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.refresh-github-btn {
+  font-size: 0.78rem;
+  background: rgba(128, 128, 128, 0.15);
+  color: var(--text-color);
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 6px;
+  padding: 3px 10px;
+  transition: all 0.2s ease;
+}
+
+.refresh-github-btn:hover:not(:disabled) {
+  background: rgba(128, 128, 128, 0.28);
+  border-color: rgba(128, 128, 128, 0.45);
+}
+
+.spin-animation {
+  animation: spinIcon 1s linear infinite;
+}
+
+@keyframes spinIcon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Architecture Toggle */
+.arch-selector-bar {
+  background: rgba(128, 128, 128, 0.06);
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(128, 128, 128, 0.18);
+}
+
+.arch-toggle-group .btn {
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  font-weight: 600;
+}
+
+/* Available Files Grid */
+.available-files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
+
+.file-download-card {
+  background: rgba(128, 128, 128, 0.06);
+  border: 1px solid rgba(128, 128, 128, 0.22);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.file-download-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(233, 84, 32, 0.5);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.deb-card {
+  border-left: 4px solid #e95420;
+}
+
+.appimage-card {
+  border-left: 4px solid #3b82f6;
+}
+
+.source-card {
+  border-left: 4px solid #10b981;
+}
+
+.card-top-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.badge-chip {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.deb-chip {
+  background: rgba(233, 84, 32, 0.18);
+  color: #e95420;
+}
+
+.appimage-chip {
+  background: rgba(59, 130, 246, 0.18);
+  color: #3b82f6;
+}
+
+.source-chip {
+  background: rgba(16, 185, 129, 0.18);
+  color: #10b981;
+}
+
+.arch-chip,
+.portable-chip,
+.branch-chip {
+  background: rgba(128, 128, 128, 0.15);
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.card-file-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.file-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.deb-icon-box {
+  background: rgba(233, 84, 32, 0.18);
+  color: #e95420;
+}
+
+.appimage-icon-box {
+  background: rgba(59, 130, 246, 0.18);
+  color: #3b82f6;
+}
+
+.source-icon-box {
+  background: rgba(16, 185, 129, 0.18);
+  color: #10b981;
+}
+
+.file-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.file-filename code {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 0.85;
+  background: rgba(128, 128, 128, 0.14);
+  padding: 2px 6px;
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+.file-actions-row {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.download-file-btn {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.copy-cmd-btn {
+  font-size: 0.8rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Installation Guide Box */
+.installation-guide-box {
+  background: rgba(128, 128, 128, 0.05);
+  border: 1px solid rgba(128, 128, 128, 0.22);
+  border-radius: 12px;
+  padding: 1.35rem;
+}
+
+.guide-terminal-icon {
+  font-size: 1.3rem;
+}
+
+.guide-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.guide-tabs-nav {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  padding-bottom: 8px;
+  overflow-x: auto;
+}
+
+.guide-tab-btn {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-color);
+  opacity: 0.7;
+  padding: 8px 14px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.guide-tab-btn:hover {
+  opacity: 1;
+  background: rgba(128, 128, 128, 0.1);
+}
+
+.guide-tab-btn.active {
+  opacity: 1;
+  background: rgba(233, 84, 32, 0.16);
+  color: #e95420;
+  border-color: rgba(233, 84, 32, 0.4);
+}
+
+/* Step Cards */
+.step-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e95420;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-heading {
+  font-size: 0.96rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Terminal Box */
+.terminal-box {
+  background: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.terminal-top {
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+}
+
+.terminal-top .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.terminal-top .dot.red {
+  background: #ff5f56;
+}
+
+.terminal-top .dot.yellow {
+  background: #ffbd2e;
+}
+
+.terminal-top .dot.green {
+  background: #27c93f;
+}
+
+.term-title {
+  margin-left: 6px;
+  font-family: monospace;
+  opacity: 0.7;
+}
+
+.copy-term-btn {
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #c9d1d9;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.copy-term-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.terminal-code {
+  margin: 0;
+  padding: 12px 14px;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #58a6ff;
+  overflow-x: auto;
+}
+
+.terminal-code code {
+  color: inherit;
+  background: none;
+  padding: 0;
+}
+
+.cmd-prompt {
+  color: #7ee787;
+  font-weight: 700;
+  user-select: none;
+}
+
+.info-sub-box {
+  background: rgba(128, 128, 128, 0.08);
+  border: 1px solid rgba(128, 128, 128, 0.18);
+  border-radius: 8px;
+}
+
+.sysfs-specs-card {
+  background: rgba(128, 128, 128, 0.07);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
+}
+
+.sysfs-endpoint-list code {
+  background: rgba(233, 84, 32, 0.12);
+  color: #e95420;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .ubuntu-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .available-files-grid {
+    grid-template-columns: 1fr;
+  }
+}
