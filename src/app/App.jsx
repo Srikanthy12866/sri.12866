@@ -17,9 +17,18 @@ function _ScrollToTop(props) {
   return props.children;
 }
 
-const ScrollToTop = withRouter(_ScrollToTop);
-
 export default function App() {
+  useEffect(() => {
+    // Handle hash route redirection (e.g. #/products -> /products)
+    if (window.location.hash && window.location.hash.startsWith("#/")) {
+      const hashPath = window.location.hash.slice(2);
+      if (hashPath) {
+        const cleanBase = (BASE_NAME || "/").replace(/\/$/, "");
+        window.history.replaceState(null, null, `${cleanBase}/${hashPath}`);
+      }
+    }
+  }, []);
+
   return (
     <Router basename={BASE_NAME}>
       <div className="cursor__dot">
